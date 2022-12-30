@@ -36,8 +36,8 @@ operation askForNumberOfOperation(){
                    "6 - Sqrt\n"
                    "7 - Factorial\n"
                    "8 - Round up\n"
-                   "9 - Round down/n"
-                   "10 - Inverse";
+                   "9 - Round down\n"
+                   "10 - Inverse\n";
         std::cin>>NumberOfOperation;
         return static_cast<operation>(NumberOfOperation+6);
     }
@@ -124,6 +124,7 @@ bool UnaryOrBinary(operation Op){
 
 double TypeNumber(){
     double Number;
+    std::cout<<"Type number\n";
     std::cin >> Number;
     return Number;
 }
@@ -246,22 +247,22 @@ double Cotangent(double a) {
 void GetAndPrintResults(operation Op, double a, double b){
     switch(Op){
         case myAdd:
-            std::cout<<a<<"+"<<b<<"="<<Addition(a,b);
+            std::cout<<a<<" + "<<b<<" = "<<Addition(a,b)<<"\n";
             break;
         case mySub:
-            std::cout<<a<<"-"<<b<<"="<<Subtraction(a,b);
+            std::cout<<a<<" - "<<b<<" = "<<Subtraction(a,b)<<"\n";
             break;
         case myMul:
-            std::cout<<a<<"*"<<b<<"="<<Multiplication(a,b);
+            std::cout<<a<<" * "<<b<<" = "<<Multiplication(a,b)<<"\n";
             break;
         case myDiv:
-            std::cout<<a<<"/"<<b<<"="<<Division(a,b);
+            std::cout<<a<<" / "<<b<<" = "<<Division(a,b)<<"\n";
             break;
         case myPow:
-            std::cout<<a<<"^"<<b<<"="<<Pow(a,b);
+            std::cout<<a<<" ^ "<<b<<" = "<<Pow(a,b)<<"\n";
             break;
         case myLog:
-            std::cout<<"log_"<<a<<"("<<b<<")="<<Log(a,b);
+            std::cout<<"log_"<<a<<"("<<b<<") = "<<Log(a,b)<<"\n";
             break;
     }
 }
@@ -269,46 +270,47 @@ void GetAndPrintResults(operation Op, double a, double b){
 void GetAndPrintResults(operation Op, double a){
     switch(Op){
         case myNegate:
-            std::cout<<"-"<<a<<"="<<Negative(a);
+            std::cout<<" - "<<a<<" = "<<Negative(a)<<"\n";
             break;
         case myExp:
-            std::cout<<"exp^"<<a<<"="<<Exponent(a);
+            std::cout<<"exp^"<<a<<" = "<<Exponent(a)<<"\n";
             break;
         case myLn:
-            std::cout<<"ln("<<a<<")="<<Ln(a);
+            std::cout<<"ln("<<a<<") = "<<Ln(a)<<"\n";
             break;
         case myLog10:
-            std::cout<<"log_10("<<a<<")="<<Log10(a);
+            std::cout<<"log_10("<<a<<") = "<<Log10(a)<<"\n";
             break;
         case mySqrt:
-            std::cout<<"√"<<a<<"="<<Sqrt(a);
+            std::cout<<"√"<<a<<" = "<<Sqrt(a)<<"\n";
             break;
         case myAbs:
-            std::cout<<"|"<<a<<"|="<<Abs(a);
+            std::cout<<"|"<<a<<"| = "<<Abs(a)<<"\n";
             break;
         case myFac:
-            std::cout<<a<<"!="<<Factorial(a);
+            std::cout<<a<<"! = "<<Factorial(a)<<"\n";
             break;
         case myCeil:
-            std::cout<<"Round up "<<a<<"="<<Ceil(a);
+            std::cout<<"Round up "<<a<<" = "<<Ceil(a)<<"\n";
             break;
         case myFloor:
-            std::cout<<"Round down "<<a<<"="<<Floor(a);
+            std::cout<<"Round down "<<a<<" = "<<Floor(a)<<"\n";
             break;
         case myInv:
-            std::cout<<"Inverse "<<a<<"="<<Inverse(a);
+            std::cout<<"Inverse "<<a<<" = "<<Inverse(a)<<"\n";
             break;
         case mySin:
-            std::cout<<"sin("<<a<<")="<<Sinus(a);
+            std::cout<<"sin("<<a<<") = "<<Sinus(a)<<"\n";
             break;
         case myCos:
-            std::cout<<"cos("<<a<<")="<<Cosine(a);
+            std::cout<<"cos("<<a<<") = "<<Cosine(a)<<"\n";
             break;
         case myTg:
-            std::cout<<"tg("<<a<<")="<<Tangent(a);
+            std::cout<<"tg("<<a<<") = "<<Tangent(a)<<"\n";
             break;
         case myCtg:
-            std::cout<<"ctg("<<a<<")="<<Cotangent(a);
+            std::cout<<"ctg("<<a<<")="<<Cotangent(a)<<"\n"
+            ;
             break;
     }
 }
