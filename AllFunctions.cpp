@@ -30,25 +30,29 @@ operation askForNumberOfOperation(){
     }
     else if(ChosenMode==Eng){
         std::cout<<"Choose the number of operation:\n"
-                   "1 - Pow\n"
-                   "2 - Exp\n"
-                   "3 - Ln\n"
-                   "4 - Log10\n"
-                   "5 - Log\n"
-                   "6 - Sqrt\n"
-                   "7 - Factorial\n"
-                   "8 - Round up\n"
-                   "9 - Round down\n"
-                   "10 - Inverse\n";
+            "1 - Pow\n"
+            "2 - Exp\n"
+            "3 - Ln\n"
+            "4 - Log10\n"
+            "5 - Log\n"
+            "6 - Sqrt\n"
+            "7 - Factorial\n"
+            "8 - Round up\n"
+            "9 - Round down\n"
+            "10 - Inverse\n";
         std::cin>>NumberOfOperation;
         return static_cast<operation>(NumberOfOperation+8);
     }
     else if(ChosenMode==Trig){
         std::cout<<"Choose the number of operation:\n"
-                   "1 - Sinus\n"
-                   "2 - Cosine\n"
-                   "3 - Tangent\n"
-                   "4 - Cotangent\n";
+            "1 - Sinus\n"
+            "2 - Cosine\n"
+            "3 - Tangent\n"
+            "4 - Cotangent\n"
+            "5 - Hyperbolic Sinus\n"
+            "6 - Hyperbolic Cosine\n"
+            "7 - Hyperbolic Tangent\n"
+            "8 - Hyperbolic Cotangent\n";
         std::cin>>NumberOfOperation;
         return static_cast<operation>(NumberOfOperation+18);
     }
@@ -120,6 +124,18 @@ bool UnaryOrBinary(operation Op){
             return true;
             break;
         case myCtg:
+            return true;
+            break;
+        case mySh:
+            return true;
+            break;
+        case myCh:
+            return true;
+            break;
+        case myTh:
+            return true;
+            break;
+        case myCth:
             return true;
             break;
         default:
@@ -257,20 +273,20 @@ double Cotangent(double a) {
     return Cosine(a) / Sinus(a);
 }
 
-double Sh(double a){
+double H_Sinus(double a){
     return (Exponent(a)- Exponent(-a))/2;
 }
 
-double Ch(double a){
+double H_Cosine(double a){
     return (Exponent(a)+ Exponent(-a))/2;
 }
 
-double Th(double a){
-    return Sh(a)/Ch(a);
+double H_Tangent(double a){
+    return Sh(a) / Ch(a);
 }
 
-double Cth(double a){
-    return Ch(a)/Sh(a);
+double H_Cotangent(double a){
+    return Ch(a) / Sh(a);
 }
 
 void GetAndPrintResults(operation Op, double a, double b){
@@ -344,8 +360,19 @@ void GetAndPrintResults(operation Op, double a){
             std::cout<<"tg("<<a<<") = "<<Tangent(a)<<"\n";
             break;
         case myCtg:
-            std::cout<<"ctg("<<a<<")="<<Cotangent(a)<<"\n"
-            ;
+            std::cout<<"ctg("<<a<<") = "<<Cotangent(a)<<"\n";
+            break;
+        case mySh:
+            std::cout<<"sh("<<a<<") = "<<H_Sinus(a)<<"\n";
+            break;
+        case myCh:
+            std::cout<<"ch("<<a<<") = "<<H_Cosine(a)<<"\n";
+            break;
+        case myTh:
+            std::cout<<"th("<<a<<") = "<<H_Tangent(a)<<"\n";
+            break;
+        case myCth:
+            std::cout<<"cth("<<a<<") = "<<H_Cotangent(a)<<"\n";
             break;
     }
 }

@@ -21,7 +21,11 @@ enum operation{
     mySin=19,
     myCos=20,
     myTg=21,
-    myCtg=22
+    myCtg=22,
+    mySh=23,
+    myCh=24,
+    myTh=25,
+    myCth=26
 };
 enum mode{
     Simple=1,
@@ -55,5 +59,9 @@ double Sinus(double a);
 double Cosine(double a);
 double Tangent(double a);
 double Cotangent(double a);
+double Sh(double a);
+double Ch(double a);
+double Th(double a);
+double Cth(double a);
 void GetAndPrintResults(operation Op, double a, double b);
 void GetAndPrintResults(operation Op, double a);
