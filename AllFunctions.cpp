@@ -282,11 +282,11 @@ double H_Cosine(double a){
 }
 
 double H_Tangent(double a){
-    return Sh(a) / Ch(a);
+    return H_Sinus(a) / H_Cosine(a);
 }
 
 double H_Cotangent(double a){
-    return Ch(a) / Sh(a);
+    return H_Cosine(a) / H_Sinus(a);
 }
 
 void GetAndPrintResults(operation Op, double a, double b){
