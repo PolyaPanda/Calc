@@ -19,4 +19,3 @@ int main() {
     } while(ContinueOrNot);
     return 0;
 }
-//privet tonya
