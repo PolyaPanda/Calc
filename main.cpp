@@ -1,5 +1,5 @@
 #include <iostream>
-#include "AllFunctions.h"
+#include "AllFunctions.cpp"
 #include <cmath>
 int main() {
     bool ContinueOrNot = 1;
