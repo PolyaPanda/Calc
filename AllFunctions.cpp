@@ -216,6 +216,7 @@ double Floor(double a) {
 double Inverse(double a) {
     return 1 / a;
 }
+
 double Sinus(double a) {
     double result = 0;
     double temp = a;
@@ -227,6 +228,7 @@ double Sinus(double a) {
     }
     return result;
 }
+
 double Cosine(double a) {
     return 1 - Pow(Sinus(a), 2);
 }
@@ -239,6 +241,22 @@ double Cotangent(double a) {
     return Cosine(a) / Sinus(a);
 }
 
+double Sh(double a){
+    return (Exponent(a)- Exponent(-a))/2;
+}
+
+double Ch(double a){
+    return (Exponent(a)+ Exponent(-a))/2;
+}
+
+double Th(double a){
+    return Sh(a)/Ch(a);
+}
+
+double Cth(double a){
+    return Ch(a)/Sh(a);
+}
+
 double UnaryPlus(double a){
     return a+1;
 }
@@ -246,6 +264,7 @@ double UnaryPlus(double a){
 double UnaryMinus(double a){
     return a-1;
 }
+
 void GetAndPrintResults(operation Op, double a, double b){
     switch(Op){
         case myAdd:
