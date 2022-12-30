@@ -14,7 +14,7 @@ int main() {
             double num2 = TypeNumber();
             GetAndPrintResults(ChosenOperation, num1, num2);
         }
-        std::cout<<"Do you want to do one more operation?\n 1 - Yes\n 0 - No\n";
+        std::cout<<"Do you want to do one more operation?\n1 - Yes\n0 - No\n";
         std::cin>>ContinueOrNot;
     } while(ContinueOrNot);
     return 0;

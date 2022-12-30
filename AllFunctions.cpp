@@ -216,22 +216,17 @@ double Floor(double a) {
 double Inverse(double a) {
     return 1 / a;
 }
-
 double Sinus(double a) {
-    while (a > 6.283185307) {
-        a -= 6.283185307;
+    double result = 0;
+    double temp = a;
+    int count = 1;
+    while (Abs(temp) > 0.000001) {
+        result += temp;
+        temp = (-1) * temp * a * a / (2 * count) / (2 * count + 1);;
+        count++;
     }
-    double temp = 0;
-    int n = 1;
-    double b = a;
-    while (Abs(a) > 0.000001) {
-        temp += a;
-        a = a * (-1) * b * b / (2 * n + 1) / 2 / n;
-        n++;
-    }
-    return temp;
+    return result;
 }
-
 double Cosine(double a) {
     return 1 - Pow(Sinus(a), 2);
 }
