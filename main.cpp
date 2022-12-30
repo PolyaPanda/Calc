@@ -1,6 +1,6 @@
 #include <iostream>
 #include "AllFunctions.cpp"
-#include "Reader.h"
+#include "AllFunctions.h"
 #include <cmath>
 int main() {
     bool ContinueOrNot = 1;

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "AllFunctions.cpp"
+//перенести енум сюда, а функции в олфанкшнс.цпп(он должен подключаться в заголовочный файл), а в мэйн хэдэр
 mode AskForMode(){
     int NumberOfMode;
     std::cout<<"Choose the number of mode:\n"
