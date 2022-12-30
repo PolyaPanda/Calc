@@ -6,20 +6,22 @@ enum operation{
     myDiv=4,
     myNegate=5,
     myAbs=6,
-    myPow=7,
-    myExp=8,
-    myLn=9,
-    myLog10=10,
-    myLog=11,
-    mySqrt=12,
-    myFac=13,
-    myCeil=14,
-    myFloor=15,
-    myInv=16,
-    mySin=17,
-    myCos=18,
-    myTg=19,
-    myCtg=20
+    myUnPl=7,
+    myUnMin=8,
+    myPow=9,
+    myExp=10,
+    myLn=11,
+    myLog10=12,
+    myLog=13,
+    mySqrt=14,
+    myFac=15,
+    myCeil=16,
+    myFloor=17,
+    myInv=18,
+    mySin=19,
+    myCos=20,
+    myTg=21,
+    myCtg=22
 };
 enum mode{
     Simple=1,
@@ -37,6 +39,8 @@ double Multiplication(double a, double b);
 double Division(double a, double b);
 double Negative(double a);
 double Abs(double a);
+double UnaryPlus(double a);
+double UnaryMinus(double a);
 double Pow(double a, double b);
 double Exponent(double a);
 double Ln(double a);
