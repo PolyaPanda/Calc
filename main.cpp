@@ -1,5 +1,4 @@
 #include <iostream>
-#include "AllFunctions.cpp"
 #include "AllFunctions.h"
 #include <cmath>
 int main() {

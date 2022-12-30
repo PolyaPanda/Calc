@@ -21,9 +21,9 @@ enum operation{
     myCtg=20
 };
 enum mode{
-    Simple,
-    Eng,
-    Trig,
-    Prog,
-    Conv
+    Simple=1,
+    Eng=2,
+    Trig=3,
+    Prog=4,
+    Conv=5
 };
