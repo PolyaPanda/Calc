@@ -17,12 +17,14 @@ operation askForNumberOfOperation(){
     mode ChosenMode = AskForMode();
     if(ChosenMode==Simple){
         std::cout<<"Choose the number of operation:\n"
-                   "1 - Addition\n"
-                   "2 - Subtraction\n"
-                   "3 - Multiplication\n"
-                   "4 - Division\n"
-                   "5 - Negate\n"
-                   "6 - Abs\n";
+            "1 - Addition\n"
+            "2 - Subtraction\n"
+            "3 - Multiplication\n"
+            "4 - Division\n"
+            "5 - Negate\n"
+            "6 - Abs\n"
+            "7 - Unary Plus\n"
+            "8 - Unary Minus\n";
         std::cin>>NumberOfOperation;
         return static_cast<operation>(NumberOfOperation);
     }
@@ -39,7 +41,7 @@ operation askForNumberOfOperation(){
                    "9 - Round down\n"
                    "10 - Inverse\n";
         std::cin>>NumberOfOperation;
-        return static_cast<operation>(NumberOfOperation+6);
+        return static_cast<operation>(NumberOfOperation+8);
     }
     else if(ChosenMode==Trig){
         std::cout<<"Choose the number of operation:\n"
@@ -48,7 +50,7 @@ operation askForNumberOfOperation(){
                    "3 - Tangent\n"
                    "4 - Cotangent\n";
         std::cin>>NumberOfOperation;
-        return static_cast<operation>(NumberOfOperation+16);
+        return static_cast<operation>(NumberOfOperation+18);
     }
 }
 
@@ -70,6 +72,12 @@ bool UnaryOrBinary(operation Op){
             return true;
             break;
         case myAbs:
+            return true;
+            break;
+        case myUnPl:
+            return true;
+            break;
+        case myUnMin:
             return true;
             break;
         case myPow:
@@ -154,6 +162,14 @@ double Abs(double a) {
         return a;
     }
     else return -a;
+}
+
+double UnaryPlus(double a){
+    return ++a;
+}
+
+double UnaryMinus(double a){
+    return --a;
 }
 
 double Pow(double a, double b) {
@@ -257,14 +273,6 @@ double Cth(double a){
     return Ch(a)/Sh(a);
 }
 
-double UnaryPlus(double a){
-    return a+1;
-}
-
-double UnaryMinus(double a){
-    return a-1;
-}
-
 void GetAndPrintResults(operation Op, double a, double b){
     switch(Op){
         case myAdd:
@@ -293,6 +301,15 @@ void GetAndPrintResults(operation Op, double a){
         case myNegate:
             std::cout<<" - "<<a<<" = "<<Negative(a)<<"\n";
             break;
+        case myAbs:
+            std::cout<<"|"<<a<<"| = "<<Abs(a)<<"\n";
+            break;
+        case myUnPl:
+            std::cout<<"Unary Plus("<<a<<") = "<<UnaryPlus(a)<<"\n";
+            break;
+        case myUnMin:
+            std::cout<<"Unary Minus("<<a<<") = "<<UnaryMinus(a)<<"\n";
+            break;
         case myExp:
             std::cout<<"exp^"<<a<<" = "<<Exponent(a)<<"\n";
             break;
@@ -304,9 +321,6 @@ void GetAndPrintResults(operation Op, double a){
             break;
         case mySqrt:
             std::cout<<"√"<<a<<" = "<<Sqrt(a)<<"\n";
-            break;
-        case myAbs:
-            std::cout<<"|"<<a<<"| = "<<Abs(a)<<"\n";
             break;
         case myFac:
             std::cout<<a<<"! = "<<Factorial(a)<<"\n";
