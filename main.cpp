@@ -1,5 +1,5 @@
 #include <iostream>
-#include "AllFunctions.h"
+#include "AllFunctions.cpp"
 #include <cmath>
 int main() {
     bool ContinueOrNot = 1;
@@ -19,4 +19,3 @@ int main() {
     } while(ContinueOrNot);
     return 0;
 }
-//privet tonya

@@ -96,26 +96,29 @@ double Factorial(double a) {
 }
 
 double Sinus(double a) {
-    double result = 0;
-    double temp = a;
-    int count = 1;
-    while ( Abs(temp)> 0.000001) {
-        result += temp;
-        temp = (-1)*temp * a * a / (2 * count) / (2 * count + 1);;
-        count++;
+    while (a > 6.283185307) {
+        a -= 6.283185307;
     }
-    return result;
+    double temp = 0;
+    int n = 1;
+    double b = a;
+    while (Abs(a) > 0.000001) {
+        temp += a;
+        a = a * (-1) * b * b / (2 * n + 1) / 2 / n;
+        n++;
+    }
+    return temp;
 }
 
 double Cosinus(double a) {
     return 1 - Pow(Sinus(a), 2);
 }
 
-double Tangens (double a) {
+double Tangens(double a) {
     return Sinus(a) / Cosinus(a);
 }
 
-double Cotangens (double a) {
+double Cotangens(double a) {
     return Cosinus(a) / Sinus(a);
 }
 
