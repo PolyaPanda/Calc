@@ -239,6 +239,13 @@ double Cotangent(double a) {
     return Cosine(a) / Sinus(a);
 }
 
+double UnaryPlus(double a){
+    return a+1;
+}
+
+double UnaryMinus(double a){
+    return a-1;
+}
 void GetAndPrintResults(operation Op, double a, double b){
     switch(Op){
         case myAdd:
